@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Tsc711Application<tsc711>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.assignment.tsc711.Tsc711Application",
+            "projectName": "tsc711",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
