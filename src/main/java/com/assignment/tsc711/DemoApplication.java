@@ -57,10 +57,17 @@ public class DemoApplication {
     private static void corruptBits(byte[] data) throws NoSuchAlgorithmException {
         // Introduce bit errors by flipping random bits
         SecureRandom secureRandom = SecureRandom.getInstanceStrong();
+
+        // generate random integer value numBitsToCorrupt, the value is choose from range [0, data lenth * 8]
+        // represent data lenth of byte array and 8 bits for each bytes
         int numBitsToCorrupt = secureRandom.nextInt(data.length * 8);
+
         for (int i = 0; i < numBitsToCorrupt; i++) {
+            // generate random byte index between 0 and data lenth
             int byteIndex = secureRandom.nextInt(data.length);
+            // generate random bit index between 0 and 8
             int bitIndex = secureRandom.nextInt(8);
+            // flip the selected bit in the data array
             data[byteIndex] ^= (1 << bitIndex);
         }
     }
